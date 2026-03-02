@@ -2,9 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guía de Interpretación de Exámenes de Laboratorio | Entiende tus resultados hoy</title>
-  <meta name="description" content="Aprende a interpretar tus exámenes de laboratorio en lenguaje simple. Guía digital con más de 50 parámetros clínicos explicados. Solo S/ 10.00." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f3460" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Guía de Interpretación de Exámenes de Laboratorio | Para Estudiantes y Profesionales de Salud</title>
+  <meta name="description" content="La guía definitiva para interpretar exámenes de laboratorio. Diseñada para estudiantes y profesionales de salud. +50 parámetros clínicos con valores de referencia y correlaciones. Solo S/ 10.00." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -174,117 +176,163 @@
       display: flex; align-items: center; gap: 10px;
       text-decoration: none;
     }
-    .brand-icon {
-      width: 38px; height: 38px;
-      background: linear-gradient(135deg, var(--teal), var(--blue-light));
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; color: white;
+    .brand-logo {
+      height: 42px;
+      width: auto;
+      border-radius: 8px;
+      display: block;
     }
-    .brand-name { color: white; font-weight: 800; font-size: 1rem; }
-    .brand-name span { color: var(--teal); }
     header .btn-wa { padding: 10px 22px; font-size: 0.9rem; box-shadow: none; }
 
     /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, #1a3a6b 50%, #0e2a55 100%);
-      padding: 80px 0 60px;
+      background: linear-gradient(150deg, #0a1f3d 0%, #0f3460 45%, #1a4a7a 100%);
+      padding: 72px 0 64px;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.12) 0%, transparent 65%);
+      pointer-events: none;
     }
     .hero .inner {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 60px;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
       align-items: center;
     }
+    /* Badge superior */
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background: rgba(14,165,233,0.15);
-      border: 1px solid rgba(14,165,233,0.3);
+      border: 1px solid rgba(14,165,233,0.35);
       color: var(--teal);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 6px 16px;
+      padding: 7px 16px;
       border-radius: 100px;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 3.2rem);
-      font-weight: 900;
-      color: white;
-      line-height: 1.15;
       margin-bottom: 20px;
     }
+    /* Headline principal */
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: var(--weight-black);
+      color: white;
+      line-height: 1.12;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
     .hero h1 .accent {
-      background: linear-gradient(90deg, var(--teal), #60d6fa);
+      background: linear-gradient(90deg, #38bdf8, #7dd3fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    /* Subtítulo */
     .hero-sub {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 36px;
-      max-width: 560px;
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 32px;
+      line-height: 1.65;
+      max-width: 540px;
     }
+    /* Bloque de precio */
     .hero-price-block {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       margin-bottom: 28px;
       flex-wrap: wrap;
     }
     .price-old {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.45);
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.4);
       text-decoration: line-through;
     }
     .price-current {
-      font-size: 2.8rem;
-      font-weight: 900;
+      font-size: 3rem;
+      font-weight: var(--weight-black);
       color: white;
+      line-height: 1;
     }
-    .price-current span { font-size: 1.4rem; font-weight: 700; }
+    .price-current span { font-size: 1.5rem; font-weight: var(--weight-bold); }
     .price-badge {
       background: var(--yellow);
       color: #1a1a1a;
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 4px 12px;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-extrabold);
+      padding: 5px 14px;
       border-radius: 100px;
+      letter-spacing: 0.03em;
     }
+    /* CTA */
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    /* Prueba social inline */
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .hero-avatars {
+      display: flex;
+    }
+    .hero-avatars span {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: linear-gradient(135deg, var(--blue-mid), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem;
+      color: white;
+      font-weight: var(--weight-bold);
+      margin-left: -8px;
+    }
+    .hero-avatars span:first-child { margin-left: 0; }
+    .hero-proof-text {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+    }
+    .hero-proof-text strong { color: white; }
+    /* Trust items */
     .hero-trust {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
       margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     .hero-trust-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.65);
-      font-size: 0.85rem;
+      gap: 7px;
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.02em;
     }
-    .hero-trust-item i { color: var(--teal); font-size: 1rem; }
+    .hero-trust-item i { color: var(--teal); font-size: 0.9rem; }
 
-    /* Book mockup */
+    /* Book mockup — desktop (columna derecha) */
     .book-mockup {
-      width: 380px;
+      width: 100%;
+      max-width: 420px;
       flex-shrink: 0;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
-      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 24px 48px rgba(0,0,0,0.35));
+      animation: float 3.5s ease-in-out infinite;
+      display: block;
+    }
+    /* Book mockup — móvil (inline, después del título) */
+    .book-mockup-mobile {
+      display: none; /* oculto en desktop */
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -576,44 +624,37 @@
       padding: var(--section-padding);
       background: var(--gray-100);
     }
-    .testimonials-grid {
+    .testimonials-fb-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
       margin-top: 48px;
     }
-    .testimonial-card {
+    .fb-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 32px 28px;
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--gray-200);
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .stars { color: var(--yellow); font-size: 1.1rem; margin-bottom: 16px; }
-    .testimonial-text {
-      font-size: var(--text-base);
-      color: var(--gray-600);
-      font-style: italic;
-      margin-bottom: 20px;
-      line-height: 1.7;
+    .fb-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
     }
-    .testimonial-author {
+    .fb-header {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
+      padding: 10px 16px;
+      background: #f0f2f5;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: var(--text-xs);
+      color: var(--gray-600);
+      font-weight: var(--weight-semibold);
     }
-    .author-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue-mid), var(--teal));
-      display: flex; align-items: center; justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .author-name { font-weight: var(--weight-bold); font-size: var(--card-body); color: var(--gray-800); }
-    .author-city { font-size: var(--text-xs); color: var(--gray-400); }
+    .fb-icon { color: #1877F2; font-size: 1rem; }
+    .fb-card img { width: 100%; display: block; }
 
     /* ===== SECTION: OFFER ===== */
     .offer-section {
@@ -841,22 +882,244 @@
       50% { box-shadow: 0 6px 40px rgba(37,211,102,0.75); }
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .hero .inner { grid-template-columns: 1fr; text-align: center; }
-      .book-placeholder { margin: 0 auto; }
-      .hero-trust { justify-content: center; }
-      .hero-actions { justify-content: center; }
-      .hero-price-block { justify-content: center; }
-      .solution-grid { grid-template-columns: 1fr; }
-      .solution-image { display: none; }
-      .forwhom-grid { grid-template-columns: 1fr; }
-      .offer-box { padding: 40px 28px; }
-      header .btn-wa { display: none; }
+    /* ===== SECTION: BONUSES ===== */
+    .bonuses-section {
+      padding: var(--section-padding);
+      background: linear-gradient(180deg, #fff9e6 0%, #fffdf5 100%);
+      border-top: 1px solid #fde68a;
+      border-bottom: 1px solid #fde68a;
+    }
+    .bonuses-section .section-title { color: var(--blue-dark); }
+    .bonuses-header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      border: 1px solid #fde68a;
+    }
+    .bonuses-total {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 2px solid #fde68a;
+      border-radius: var(--radius);
+      padding: 12px 24px;
+      margin: 0 auto 48px;
+      font-size: var(--text-base);
+      color: var(--gray-600);
+    }
+    .bonuses-total strong { color: var(--red); font-size: var(--text-xl); font-weight: var(--weight-extrabold); }
+    .bonuses-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .bonus-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #fde68a;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .bonus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(245,158,11,0.2);
+    }
+    .bonus-num-badge {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: var(--yellow);
+      color: #1a1a1a;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-extrabold);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .bonus-img-wrap {
+      position: relative;
+      background: var(--gray-100);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .bonus-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .bonus-card:hover .bonus-img-wrap img { transform: scale(1.03); }
+    .bonus-gratis-ribbon {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: white;
+      text-align: center;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-extrabold);
+      letter-spacing: 0.1em;
+      padding: 6px 0;
+    }
+    .bonus-body {
+      padding: 16px 14px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bonus-body h3 {
+      font-size: 0.9rem;
+      font-weight: var(--weight-bold);
+      color: var(--blue-dark);
+      line-height: 1.3;
+    }
+    .bonus-body p {
+      font-size: var(--text-xs);
+      color: var(--gray-600);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .bonus-value {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .bonus-value-old {
+      font-size: var(--text-xs);
+      color: var(--gray-400);
+      text-decoration: line-through;
+    }
+    .bonus-value-free {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-extrabold);
+      color: var(--green);
     }
 
+    /* ===== RESPONSIVE ===== */
+
+    /* --- Tablet: 768px --- */
+    @media (max-width: 768px) {
+      :root { --section-padding: 64px 0; }
+
+      /* Header */
+      header .btn-wa { display: none; }
+
+      /* Hero — todo en una columna */
+      .hero { padding: 48px 0 56px; }
+      .hero .inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+        text-align: center;
+      }
+      /* Ocultar imagen desktop, mostrar imagen móvil inline */
+      .book-mockup        { display: none; }
+      .book-mockup-mobile {
+        display: block;
+        width: 92%;
+        max-width: 480px;
+        margin: 20px auto 24px;
+        filter: drop-shadow(0 16px 32px rgba(0,0,0,0.3));
+      }
+      .hero-badge   { justify-content: center; }
+      .hero h1      { font-size: clamp(1.75rem, 7vw, 2.6rem); }
+      .hero-sub     { font-size: var(--text-base); margin: 0 auto 28px; }
+      .hero-price-block  { justify-content: center; }
+      .hero-actions      { justify-content: center; }
+      .hero-social-proof { justify-content: center; }
+      .hero-trust        { justify-content: center; gap: 14px; }
+      .btn-wa.large      { font-size: 1.05rem; padding: 18px 32px; width: 100%; justify-content: center; }
+
+      /* Secciones */
+      .solution-grid { grid-template-columns: 1fr; }
+      .solution-image { display: none; }
+      .forwhom-grid { grid-template-columns: 1fr; gap: 20px; }
+      .offer-box { padding: 40px 24px; }
+      .offer-price-current { font-size: 3.2rem; }
+
+      /* Grids de cards — 2 columnas en tablet */
+      .pain-cards           { grid-template-columns: 1fr; }
+      .contents-grid        { grid-template-columns: 1fr 1fr; }
+      .benefits-grid        { grid-template-columns: 1fr 1fr; }
+      .testimonials-fb-grid { grid-template-columns: 1fr 1fr; }
+      .bonuses-grid         { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+
+    /* --- Mobile: 480px --- */
     @media (max-width: 480px) {
-      .pain-cards, .contents-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      :root { --section-padding: 52px 0; }
+      .container { padding: 0 16px; }
+
+      /* Hero */
+      .hero { padding: 36px 0 48px; }
+      .book-mockup-mobile { width: 88%; }
+      .hero h1 { font-size: 1.75rem; letter-spacing: -0.01em; }
+      .price-current { font-size: 2.6rem; }
+      .hero-trust { flex-direction: column; align-items: center; gap: 10px; }
+
+      /* Botón WA — táctil, ancho completo */
+      .btn-wa       { padding: 16px 24px; font-size: 1rem; width: 100%; justify-content: center; }
+      .btn-wa.large { padding: 18px 24px; font-size: 1.05rem; }
+
+      /* Grids — 1 columna en móvil */
+      .contents-grid        { grid-template-columns: 1fr; }
+      .benefits-grid        { grid-template-columns: 1fr; }
+      .testimonials-fb-grid { grid-template-columns: 1fr; }
+      .pain-cards           { grid-template-columns: 1fr; }
+      .bonuses-grid         { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+      /* Cards */
+      .pain-card    { flex-direction: column; gap: 12px; padding: 24px 20px; }
+      .content-card { padding: 20px 16px; }
+      .benefit-card { padding: 24px 20px; }
+      .forwhom-card { padding: 28px 20px; }
+
+      /* Offer */
+      .offer-box { padding: 36px 20px; }
+      .offer-price-current { font-size: 3rem; }
+      .offer-includes { max-width: 100%; }
+
+      /* Sección solución */
+      .section-title { font-size: 1.5rem; }
+      .section-sub   { font-size: 0.95rem; }
+
+      /* FAQ */
+      .faq-question { padding: 18px 16px; font-size: 0.9rem; }
+      .faq-answer-inner { padding: 0 16px 18px; font-size: 0.9rem; }
+      .faq-list { gap: 8px; }
+
+      /* CTA final */
+      .final-cta { padding: 72px 0; }
+      .final-cta h2 { font-size: 1.65rem; }
+
+      /* Botón flotante WA — más pequeño en móvil */
+      .wa-float { width: 52px; height: 52px; font-size: 1.4rem; bottom: 20px; right: 16px; }
+
+      /* Header */
+      .brand-name { font-size: 0.9rem; }
+    }
+
+    /* --- Pantallas muy pequeñas: 360px --- */
+    @media (max-width: 360px) {
+      .hero h1 { font-size: 1.55rem; }
+      .book-mockup { width: 200px; }
+      .btn-wa.large { font-size: 0.95rem; padding: 16px 20px; }
     }
   </style>
 </head>
@@ -866,11 +1129,10 @@
   <header>
     <div class="container inner">
       <a href="#" class="brand">
-        <div class="brand-icon"><i class="fas fa-flask"></i></div>
-        <div class="brand-name">Salud<span>Digital</span> Perú</div>
+        <img src="img/logo.png" alt="Recursos Médicos" class="brand-logo" />
       </a>
       <a href="https://wa.me/51975909094?text=Hola%2C%20quiero%20adquirir%20la%20Gu%C3%ADa%20de%20Interpretaci%C3%B3n%20de%20Ex%C3%A1menes%20de%20Laboratorio.%20%C2%BFC%C3%B3mo%20la%20obtengo%3F" target="_blank" rel="noopener" class="btn-wa">
-        <i class="fab fa-whatsapp"></i> Comprar ahora — S/ 10
+        <i class="fab fa-whatsapp"></i> Obtener la guía — S/ 10
       </a>
     </div>
   </header>
@@ -880,30 +1142,38 @@
     <div class="container inner">
       <div class="hero-content">
         <div class="hero-badge">
-          <i class="fas fa-bolt"></i>
-          Ebook digital · Descarga inmediata · Envío por WhatsApp
+          <i class="fas fa-user-md"></i>
+          Para estudiantes y profesionales de la salud
         </div>
         <h1>
-          ¿Recibes tus exámenes de laboratorio y
-          <span class="accent">no entiendes nada?</span>
+          Deja de buscar valores<br>en 3 libros distintos.<br>
+          <span class="accent">Tenlo todo en uno.</span>
         </h1>
+        <!-- Imagen visible SOLO en móvil, después del título -->
+        <img src="img/portada.png" alt="Guía Completa para la Interpretación de Exámenes de Laboratorio" class="book-mockup-mobile" />
         <p class="hero-sub">
-          Descarga la guía que explica en lenguaje simple y claro más de <strong>50 parámetros clínicos</strong> — para que nunca más dependas de que alguien te lo explique.
+          +50 parámetros clínicos con valores de referencia, interpretación y correlaciones con patologías — en un PDF que cabe en tu celular y funciona sin internet.
         </p>
         <div class="hero-price-block">
-          <span class="price-old">Antes S/ 39.90</span>
+          <span class="price-old">S/ 39.90</span>
           <div class="price-current"><span>S/ </span>10.00</div>
           <span class="price-badge">-75% OFF</span>
         </div>
         <div class="hero-actions">
           <a href="https://wa.me/51975909094?text=Hola%2C%20quiero%20adquirir%20la%20Gu%C3%ADa%20de%20Interpretaci%C3%B3n%20de%20Ex%C3%A1menes%20de%20Laboratorio.%20%C2%BFC%C3%B3mo%20la%20obtengo%3F" target="_blank" rel="noopener" class="btn-wa large">
-            <i class="fab fa-whatsapp"></i> Quiero mi guía ahora
+            <i class="fab fa-whatsapp"></i> Quiero mi guía — S/ 10.00
           </a>
         </div>
+        <div class="hero-social-proof">
+          <div class="hero-avatars">
+            <span>CM</span><span>AL</span><span>RV</span><span>KS</span>
+          </div>
+          <p class="hero-proof-text"><strong>+200 estudiantes y profesionales</strong><br>ya la tienen en su celular</p>
+        </div>
         <div class="hero-trust">
-          <div class="hero-trust-item"><i class="fas fa-shield-alt"></i> Pago 100% seguro</div>
-          <div class="hero-trust-item"><i class="fas fa-bolt"></i> Envío inmediato</div>
-          <div class="hero-trust-item"><i class="fas fa-mobile-alt"></i> Funciona en celular</div>
+          <div class="hero-trust-item"><i class="fas fa-bolt"></i> Entrega en menos de 5 min</div>
+          <div class="hero-trust-item"><i class="fas fa-wifi-slash" style="font-size:0.75rem"></i><i class="fas fa-mobile-alt"></i> Sin internet en guardia</div>
+          <div class="hero-trust-item"><i class="fas fa-infinity"></i> Acceso de por vida</div>
         </div>
       </div>
       <img src="img/portada.png" alt="Guía Completa para la Interpretación de Exámenes de Laboratorio" class="book-mockup" />
@@ -913,29 +1183,29 @@
   <!-- PAIN POINTS -->
   <section class="pain-section">
     <div class="container text-center">
-      <div class="tag">Reconoce esta situación</div>
-      <h2 class="section-title">Sabemos exactamente cómo te sientes...</h2>
+      <div class="tag">¿Te ha pasado esto?</div>
+      <h2 class="section-title">El problema que nadie te enseña en la teoría</h2>
       <div class="divider"></div>
       <div class="pain-cards">
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-question-circle"></i></div>
+          <div class="pain-icon"><i class="fas fa-procedures"></i></div>
           <div>
-            <h3>Resultados incomprensibles</h3>
-            <p>Te entregan una hoja llena de números y siglas que no significan nada para ti. GLU, HDL, TGO, TSH... ¿qué quieren decir?</p>
+            <h3>Llegas a prácticas y te bloqueas</h3>
+            <p>El docente o el médico te pregunta qué significa un valor alterado y no encuentras la respuesta. En guardia no hay tiempo para buscar en libros.</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="pain-icon"><i class="fas fa-book-open"></i></div>
           <div>
-            <h3>Miedo al ver valores "anormales"</h3>
-            <p>Ves una flecha roja o un valor fuera de rango y entras en pánico sin saber si es algo grave o algo sin importancia.</p>
+            <h3>La información está dispersa en 3 libros</h3>
+            <p>Tienes Harrison, Robbins, Murray... pero cuando necesitas interpretar un resultado rápido, no tienes tiempo de buscar en 600 páginas cada uno.</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon"><i class="fas fa-clock"></i></div>
+          <div class="pain-icon"><i class="fas fa-brain"></i></div>
           <div>
-            <h3>El médico no tiene tiempo</h3>
-            <p>La consulta dura 10 minutos y sales con más dudas que respuestas. Dependes de otros para entender tu propia salud.</p>
+            <h3>Memorizas, pero se te olvida en el momento clave</h3>
+            <p>Estudias los valores de referencia para el examen y los olvidas al mes. Sin un recurso de repaso rápido, el conocimiento no se consolida.</p>
           </div>
         </div>
       </div>
@@ -952,28 +1222,28 @@
         </div>
         <div class="solution-content">
           <div class="tag">La solución</div>
-          <h2>Finalmente, entiende cada resultado sin ser médico</h2>
-          <p>Esta guía fue diseñada para personas como tú: pacientes, familiares y cualquier persona que quiera entender su salud. Sin tecnicismos innecesarios. Sin complicaciones.</p>
+          <h2>Una guía diseñada para el ritmo real de la práctica clínica</h2>
+          <p>No es un libro de texto de 800 páginas. Es una guía visual, concisa y organizada que consolidó lo más importante de la bioquímica clínica — para que tú te enfoques en el paciente, no en buscar datos.</p>
           <ul class="solution-points">
             <li>
               <div class="check"><i class="fas fa-check"></i></div>
-              <span>Cada parámetro explicado en lenguaje simple y cotidiano</span>
+              <span>Valores de referencia actualizados para adultos, organizados por sistema</span>
             </li>
             <li>
               <div class="check"><i class="fas fa-check"></i></div>
-              <span>Valores normales, bajos y altos — y qué significa cada caso</span>
+              <span>Interpretación clínica de cada parámetro: qué significa cuando sube o baja</span>
             </li>
             <li>
               <div class="check"><i class="fas fa-check"></i></div>
-              <span>Ilustraciones y tablas de referencia fáciles de entender</span>
+              <span>Correlaciones con patologías frecuentes: anemia, DM2, dislipidemia, IRC y más</span>
             </li>
             <li>
               <div class="check"><i class="fas fa-check"></i></div>
-              <span>Disponible en PDF para leer desde tu celular o computadora</span>
+              <span>Tablas y esquemas visuales pensados para estudio y repaso rápido</span>
             </li>
             <li>
               <div class="check"><i class="fas fa-check"></i></div>
-              <span>Te la enviamos por WhatsApp en menos de 5 minutos</span>
+              <span>PDF optimizado para celular — consúltalo en guardia sin internet</span>
             </li>
           </ul>
         </div>
@@ -1052,40 +1322,40 @@
   <!-- BENEFITS -->
   <section class="benefits-section">
     <div class="container text-center">
-      <div class="tag">¿Por qué elegirla?</div>
-      <h2 class="section-title">Lo que lograrás con esta guía</h2>
+      <div class="tag">Lo que obtienes</div>
+      <h2 class="section-title">Lo que cambia en tu práctica clínica</h2>
       <div class="divider"></div>
-      <p class="section-sub">Más que un ebook, es una herramienta que cambia la forma en que entiendes tu salud.</p>
+      <p class="section-sub">Una herramienta que te hace más seguro, más rápido y más preciso frente al paciente.</p>
       <div class="benefits-grid">
         <div class="benefit-card">
-          <div class="ben-icon">🔍</div>
-          <h3>Leer tus resultados solo</h3>
-          <p>Sin necesitar que nadie te explique. Interpreta cualquier examen en minutos.</p>
+          <div class="ben-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Respuesta clínica inmediata</h3>
+          <p>En guardia, consulta o práctica, encuentra el valor, su rango y su significado en segundos. Sin buscar en Google.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">💪</div>
-          <h3>Tomar el control de tu salud</h3>
-          <p>Toma decisiones informadas sobre tu alimentación, estilo de vida y seguimiento médico.</p>
+          <div class="ben-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Prepara tus exámenes en menos tiempo</h3>
+          <p>Tablas claras y correlaciones clínicas para repasar antes del OSCE, examen teórico o rotación clínica.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">😌</div>
-          <h3>Vivir sin ansiedad médica</h3>
-          <p>Deja de entrar en pánico al ver valores alterados. Entiende exactamente qué significa cada uno.</p>
+          <div class="ben-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>Consolida tu razonamiento clínico</h3>
+          <p>No solo memorices rangos — entiende qué alteración orienta a qué patología y cómo correlacionar los resultados.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">🏥</div>
-          <h3>Consultas más productivas</h3>
-          <p>Llega al médico ya sabiendo qué preguntar. Aprovecha cada minuto de tu consulta.</p>
+          <div class="ben-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Tu referencia en el bolsillo</h3>
+          <p>PDF optimizado para celular. Accede sin internet durante la guardia nocturna, la rotación o el internado.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">📱</div>
-          <h3>Siempre disponible</h3>
-          <p>PDF en tu celular, tablet o laptop. Consulta cuando lo necesites, sin internet.</p>
+          <div class="ben-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+          <h3>Toda la info en un solo lugar</h3>
+          <p>Deja de abrir 3 libros para encontrar lo mismo. Lo esencial de bioquímica clínica, organizado y listo para usar.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">👨‍👩‍👧‍👦</div>
-          <h3>Ayuda a tu familia</h3>
-          <p>Entiende los resultados de tus padres, hijos o cualquier familiar. Una compra, valor para todos.</p>
+          <div class="ben-icon"><i class="fas fa-user-shield"></i></div>
+          <h3>Mayor seguridad frente al paciente</h3>
+          <p>Responde con confianza cuando el docente o el médico responsable te pregunte por un resultado alterado.</p>
         </div>
       </div>
     </div>
@@ -1095,26 +1365,26 @@
   <section class="forwhom-section">
     <div class="container text-center">
       <div class="tag">¿Es para ti?</div>
-      <h2 class="section-title">Esta guía es perfecta para ti si...</h2>
+      <h2 class="section-title">Esta guía es para ti si...</h2>
       <div class="divider"></div>
       <div class="forwhom-grid">
         <div class="forwhom-card yes">
           <h3><i class="fas fa-check-circle"></i> SÍ es para ti</h3>
           <ul class="forwhom-list">
-            <li><i class="fas fa-check-circle"></i><span>Recibes exámenes de laboratorio y no los entiendes</span></li>
-            <li><i class="fas fa-check-circle"></i><span>Tienes familiar con diabetes, hipertensión, colesterol alto o anemia</span></li>
-            <li><i class="fas fa-check-circle"></i><span>Quieres monitorear tu salud de forma más activa</span></li>
-            <li><i class="fas fa-check-circle"></i><span>Estudias enfermería, farmacia, nutrición o carreras de salud</span></li>
-            <li><i class="fas fa-check-circle"></i><span>Eres cuidador de un adulto mayor y manejas sus resultados</span></li>
-            <li><i class="fas fa-check-circle"></i><span>Simplemente quieres entender tu cuerpo mejor</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Eres estudiante de medicina, enfermería, farmacia, nutrición o tecnología médica</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Estás en internado, SERUMS o residencia y necesitas referencia clínica rápida</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Eres profesional de salud que quiere un recurso ágil de consulta diaria</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Vas a rendir un OSCE, examen de laboratorio clínico o evaluación de prácticas</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Docente que busca material de apoyo visual para sus clases</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Quieres consolidar tu razonamiento clínico con correlaciones prácticas</span></li>
           </ul>
         </div>
         <div class="forwhom-card no">
           <h3><i class="fas fa-times-circle"></i> NO es para ti si...</h3>
           <ul class="forwhom-list">
-            <li><i class="fas fa-times-circle"></i><span>Eres médico o especialista de laboratorio clínico</span></li>
-            <li><i class="fas fa-times-circle"></i><span>Buscas una guía con terminología técnica avanzada</span></li>
-            <li><i class="fas fa-times-circle"></i><span>No tienes acceso a un celular o computadora para leer PDFs</span></li>
+            <li><i class="fas fa-times-circle"></i><span>Buscas un texto académico con referencias bibliográficas y metodología de investigación</span></li>
+            <li><i class="fas fa-times-circle"></i><span>Eres especialista en laboratorio clínico o bioquímico con años de práctica</span></li>
+            <li><i class="fas fa-times-circle"></i><span>Necesitas protocolos institucionales o guías GPC oficiales del MINSA</span></li>
           </ul>
         </div>
       </div>
@@ -1124,44 +1394,134 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
     <div class="container text-center">
-      <div class="tag">Lo que dicen nuestros lectores</div>
-      <h2 class="section-title">Miles de peruanos ya entienden sus exámenes</h2>
+      <div class="tag">Comentarios reales de Facebook</div>
+      <h2 class="section-title">Lo que dicen quienes ya la tienen</h2>
       <div class="divider"></div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"¡Al fin entiendo mis exámenes! Tengo diabetes y siempre me confundían los resultados. Esta guía me explicó todo de manera muy sencilla. La recomiendo al 100%."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MR</div>
-            <div>
-              <div class="author-name">María R.</div>
-              <div class="author-city">Lima, Perú</div>
-            </div>
+      <p class="section-sub">Opiniones verificadas de compradores reales — sin editar.</p>
+      <div class="testimonials-fb-grid">
+        <div class="fb-card">
+          <div class="fb-header">
+            <i class="fab fa-facebook fb-icon"></i>
+            <span>Comentario verificado de Facebook</span>
           </div>
+          <img src="img/testimonios/testimonio1.png" alt="Testimonio de Alfredo Solier — Muy recomendable" loading="lazy" />
         </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Mi mamá tiene 65 años y yo le ayudo a interpretar sus análisis. Con esta guía ya puedo hacerlo solo. Vale mucho más que los 10 soles que pagué."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">JC</div>
-            <div>
-              <div class="author-name">Jorge C.</div>
-              <div class="author-city">Arequipa, Perú</div>
-            </div>
+        <div class="fb-card">
+          <div class="fb-header">
+            <i class="fab fa-facebook fb-icon"></i>
+            <span>Comentario verificado de Facebook</span>
           </div>
+          <img src="img/testimonios/testimonio3.png" alt="Testimonio de Katiushka Suarez — Súper agradecida" loading="lazy" />
         </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Soy estudiante de enfermería y esta guía me ayudó a entender los valores de referencia de forma práctica. Súper recomendada para estudiantes de salud."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">LP</div>
-            <div>
-              <div class="author-name">Lucía P.</div>
-              <div class="author-city">Trujillo, Perú</div>
-            </div>
+        <div class="fb-card">
+          <div class="fb-header">
+            <i class="fab fa-facebook fb-icon"></i>
+            <span>Comentario verificado de Facebook</span>
           </div>
+          <img src="img/testimonios/testimonio2.png" alt="Testimonio de Jimena HR — Muy confiable" loading="lazy" />
+        </div>
+        <div class="fb-card">
+          <div class="fb-header">
+            <i class="fab fa-facebook fb-icon"></i>
+            <span>Comentario verificado de Facebook</span>
+          </div>
+          <img src="img/testimonios/testimonio4.png" alt="Testimonio de Manuel Pisfil — CumplieronConmigo" loading="lazy" />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonuses-section">
+    <div class="container text-center">
+      <div class="bonuses-header-tag">
+        <i class="fas fa-gift"></i> Solo por hoy — incluido en tu compra
+      </div>
+      <h2 class="section-title">Compra la guía y recibe<br><span style="color:var(--yellow)">4 bonos gratis</span> de regalo</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Recursos adicionales valorados en más de S/ 80 — incluidos sin costo extra al adquirir la guía hoy.</p>
+
+      <div class="bonuses-grid">
+
+        <!-- Bono 1 -->
+        <div class="bonus-card">
+          <div class="bonus-img-wrap">
+            <div class="bonus-num-badge">1</div>
+            <img src="img/bonus/bonus1-esquemas.jpg" alt="50 Esquemas Médicos" loading="lazy" />
+            <div class="bonus-gratis-ribbon"><i class="fas fa-gift"></i> GRATIS</div>
+          </div>
+          <div class="bonus-body">
+            <h3>50 Esquemas Médicos</h3>
+            <p>Colección visual de los esquemas más importantes de anatomía, fisiología y clínica — ideales para estudiar y repasar rápido.</p>
+            <div class="bonus-value">
+              <span class="bonus-value-old">S/ 25.00</span>
+              <span class="bonus-value-free"><i class="fas fa-check-circle"></i> GRATIS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bono 2 -->
+        <div class="bonus-card">
+          <div class="bonus-img-wrap">
+            <div class="bonus-num-badge">2</div>
+            <img src="img/bonus/bonus2-medicamentos.jpg" alt="Administración de Medicamentos" loading="lazy" />
+            <div class="bonus-gratis-ribbon"><i class="fas fa-gift"></i> GRATIS</div>
+          </div>
+          <div class="bonus-body">
+            <h3>Administración de Medicamentos</h3>
+            <p>Guía práctica con vías de administración, dosis, precauciones y cuidados de enfermería. Indispensable en práctica clínica.</p>
+            <div class="bonus-value">
+              <span class="bonus-value-old">S/ 20.00</span>
+              <span class="bonus-value-free"><i class="fas fa-check-circle"></i> GRATIS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bono 3 -->
+        <div class="bonus-card">
+          <div class="bonus-img-wrap">
+            <div class="bonus-num-badge">3</div>
+            <img src="img/bonus/bonus3-electro.jpg" alt="Electro en Esquemas - ECG Básico" loading="lazy" />
+            <div class="bonus-gratis-ribbon"><i class="fas fa-gift"></i> GRATIS</div>
+          </div>
+          <div class="bonus-body">
+            <h3>Electro en Esquemas — ECG Básico</h3>
+            <p>Interpretación electrocardiográfica desde cero: ritmo, eje, derivaciones, ondas y patrones clínicos frecuentes en guardia.</p>
+            <div class="bonus-value">
+              <span class="bonus-value-old">S/ 20.00</span>
+              <span class="bonus-value-free"><i class="fas fa-check-circle"></i> GRATIS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bono 4 -->
+        <div class="bonus-card">
+          <div class="bonus-img-wrap">
+            <div class="bonus-num-badge">4</div>
+            <img src="img/bonus/bonus4-libros.jpg" alt="Libros de Medicina - Colección Completa" loading="lazy" />
+            <div class="bonus-gratis-ribbon"><i class="fas fa-gift"></i> GRATIS</div>
+          </div>
+          <div class="bonus-body">
+            <h3>Libros de Medicina — Colección Completa</h3>
+            <p>Acceso a colección digital de referencia en Anatomía, Fisiología, Farmacología, Patología, Semiología y Medicina Interna.</p>
+            <div class="bonus-value">
+              <span class="bonus-value-old">S/ 20.00</span>
+              <span class="bonus-value-free"><i class="fas fa-check-circle"></i> GRATIS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Total de valor -->
+      <div style="margin-top:36px;">
+        <div class="bonuses-total">
+          <span>Valor total de los bonos:</span>
+          <strong>S/ 85.00</strong>
+          <span style="color:var(--green);font-weight:700;">→ Tuyos GRATIS</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1169,15 +1529,16 @@
   <section class="offer-section">
     <div class="container">
       <div class="offer-box">
-        <div class="offer-tag">🎉 Oferta de lanzamiento</div>
-        <h2>Obtén acceso completo hoy</h2>
-        <p class="offer-sub">Paga una sola vez y recibe la guía de por vida en tu WhatsApp</p>
+        <div class="offer-tag"><i class="fas fa-tag"></i> Precio de lanzamiento</div>
+        <h2>Tu referencia clínica completa por S/ 10</h2>
+        <p class="offer-sub">Pago único, sin suscripciones. La recibes en tu WhatsApp en menos de 5 minutos.</p>
         <ul class="offer-includes">
-          <li><i class="fas fa-check-circle"></i> Guía completa en PDF (lectura en celular y PC)</li>
-          <li><i class="fas fa-check-circle"></i> Más de 50 parámetros clínicos explicados</li>
-          <li><i class="fas fa-check-circle"></i> Tablas de valores normales para adultos</li>
-          <li><i class="fas fa-check-circle"></i> Actualizaciones gratuitas</li>
-          <li><i class="fas fa-check-circle"></i> Entrega inmediata por WhatsApp</li>
+          <li><i class="fas fa-check-circle"></i> Guía de Interpretación de Laboratorio en PDF</li>
+          <li><i class="fas fa-check-circle"></i> +50 parámetros clínicos con valores y correlaciones</li>
+          <li><i class="fas fa-gift" style="color:var(--yellow)"></i> <strong style="color:var(--yellow)">BONO 1:</strong> 50 Esquemas Médicos</li>
+          <li><i class="fas fa-gift" style="color:var(--yellow)"></i> <strong style="color:var(--yellow)">BONO 2:</strong> Administración de Medicamentos</li>
+          <li><i class="fas fa-gift" style="color:var(--yellow)"></i> <strong style="color:var(--yellow)">BONO 3:</strong> Electro en Esquemas — ECG</li>
+          <li><i class="fas fa-gift" style="color:var(--yellow)"></i> <strong style="color:var(--yellow)">BONO 4:</strong> Libros de Medicina Colección Completa</li>
         </ul>
         <div class="offer-price-block">
           <div class="offer-price-old">Precio normal: S/ 39.90</div>
@@ -1196,7 +1557,7 @@
   <section class="faq-section">
     <div class="container text-center">
       <div class="tag">Preguntas frecuentes</div>
-      <h2 class="section-title">¿Tienes dudas?</h2>
+      <h2 class="section-title">Resolvemos tus dudas</h2>
       <div class="divider"></div>
       <div class="faq-list">
         <div class="faq-item">
@@ -1206,51 +1567,51 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Al escribirnos por WhatsApp, te indicaremos los métodos de pago disponibles (Yape, Plin o transferencia bancaria). Apenas confirmemos tu pago, te enviamos la guía en PDF directamente a tu WhatsApp en menos de 5 minutos.
+              Escríbenos por WhatsApp y te indicamos los métodos de pago (Yape, Plin o transferencia). En menos de 5 minutos de confirmado el pago, te enviamos el PDF directo a tu WhatsApp. Sin esperas, sin complicaciones.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            ¿En qué formato está la guía?
+            ¿Puedo usarla sin internet en guardia o rotación?
             <i class="fas fa-chevron-down faq-arrow"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              La guía es un archivo PDF de alta calidad. Puedes leerla en tu celular (Android o iPhone), tablet o computadora. No necesitas ningún programa especial — cualquier lector de PDF funciona, incluso el que ya viene en tu teléfono.
+              Sí. Una vez que tienes el PDF guardado en tu celular, puedes abrirlo sin conexión a internet. Es ideal para guardias nocturnas, rotaciones en hospitales con mala señal o cualquier situación donde necesites consulta rápida sin depender del WiFi.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Necesito ser médico para entender la guía?
+            ¿Es útil desde primer año de carrera o solo para internado?
             <i class="fas fa-chevron-down faq-arrow"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              ¡Para nada! La guía fue diseñada específicamente para personas sin conocimientos médicos. Usamos lenguaje sencillo, ejemplos prácticos y tablas visuales para que cualquier persona pueda entender sus resultados.
+              Desde primer año. Los estudiantes de ciencias básicas la usan para bioquímica y fisiología. Los de clínica para correlacionar laboratorio con patología. Los internos y residentes como referencia en guardia. Y los profesionales como consulta diaria. Sirve en todas las etapas.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Esta guía reemplaza la consulta médica?
+            ¿Los valores de referencia son aplicables en Perú?
             <i class="fas fa-chevron-down faq-arrow"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              No. La guía es una herramienta educativa para que puedas entender mejor tus resultados y tener conversaciones más informadas con tu médico. Siempre debes consultar con un profesional de la salud ante cualquier duda o síntoma.
+              Sí. Los rangos de referencia están basados en estándares internacionales vigentes (OMS, CLSI) que son los mismos que usan los laboratorios clínicos en Perú. Se indica cuando hay variaciones significativas según el método o equipo del laboratorio.
             </div>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            ¿Hacen envíos solo en Lima o a todo el Perú?
+            ¿Puedo compartirla con mis compañeros de carrera?
             <i class="fas fa-chevron-down faq-arrow"></i>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Como es un producto digital (PDF), hacemos "envío" a todo el Perú y el mundo. Te lo enviamos por WhatsApp sin importar dónde estés — solo necesitas internet.
+              La licencia es personal. Si tus compañeros también la quieren, pueden adquirirla por el mismo precio de S/ 10. Así apoyas que sigamos creando recursos de calidad para estudiantes de salud en Perú.
             </div>
           </div>
         </div>
@@ -1261,7 +1622,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Aceptamos Yape, Plin y transferencia bancaria. Es rápido, seguro y 100% peruano. Al escribirnos al WhatsApp te daremos todos los detalles.
+              Aceptamos Yape, Plin y transferencia bancaria. 100% peruano, rápido y sin comisiones. Al escribirnos al WhatsApp te damos todos los detalles.
             </div>
           </div>
         </div>
@@ -1272,10 +1633,10 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>¿Listo para entender<br>tu salud de una vez?</h2>
-      <p>Más de 50 parámetros clínicos explicados en lenguaje simple. Tu guía llega a tu WhatsApp en minutos.</p>
+      <h2>La próxima guardia podrías<br><span style="color:#60d6fa">responder con confianza.</span></h2>
+      <p>+50 parámetros clínicos con valores de referencia, interpretación y correlaciones. En tu celular en menos de 5 minutos.</p>
       <a href="https://wa.me/51975909094?text=Hola%2C%20quiero%20adquirir%20la%20Gu%C3%ADa%20de%20Interpretaci%C3%B3n%20de%20Ex%C3%A1menes%20de%20Laboratorio%20por%20S%2F%2010.%20%C2%BFC%C3%B3mo%20puedo%20pagar%3F" target="_blank" rel="noopener" class="btn-wa large">
-        <i class="fab fa-whatsapp"></i> Escríbenos ahora — S/ 10.00
+        <i class="fab fa-whatsapp"></i> Quiero mi guía ahora — S/ 10.00
       </a>
       <p class="final-price">Pago único · Entrega inmediata · <strong>Solo S/ 10.00</strong></p>
     </div>
@@ -1284,8 +1645,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2025 SaludDigital Perú · Todos los derechos reservados</p>
-      <p style="margin-top:8px;">Esta guía es de uso educativo e informativo. No reemplaza la consulta médica profesional.</p>
+      <p>© 2025 Recursos Médicos · Todos los derechos reservados</p>
+      <p style="margin-top:8px;">Recurso educativo para estudiantes y profesionales de la salud. No sustituye criterio clínico ni guías GPC oficiales.</p>
     </div>
   </footer>
 
