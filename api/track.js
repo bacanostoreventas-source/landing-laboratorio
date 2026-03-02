@@ -22,6 +22,16 @@ export default async function handler(req, res) {
   const clientIp = (req.headers['x-forwarded-for'] || '')
     .split(',')[0].trim() || req.socket?.remoteAddress || '';
 
+  // custom_data solo para eventos de conversión con valor económico
+  const isPurchase = event_name === 'Purchase';
+  const customData = isPurchase ? {
+    currency:         'PEN',
+    value:            10.00,
+    content_name:     'Guía Interpretación Exámenes de Laboratorio',
+    content_category: 'Ebook',
+    num_items:        1,
+  } : undefined;
+
   const payload = {
     data: [
       {
@@ -36,6 +46,7 @@ export default async function handler(req, res) {
           ...(fbp ? { fbp } : {}),
           ...(fbc ? { fbc } : {}),
         },
+        ...(customData ? { custom_data: customData } : {}),
       },
     ],
   };

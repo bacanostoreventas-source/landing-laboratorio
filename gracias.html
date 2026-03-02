@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por tu compra! — Recursos Médicos</title>
+
+  <!-- Meta Pixel — dispara Purchase con datos del cliente para atribución correcta -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '960233036561751');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=960233036561751&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      background: #f0fdf4;
+      color: #1e293b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    .top-bar {
+      background: #0f3460;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .top-bar i    { color: #0ea5e9; font-size: 1.3rem; }
+    .top-bar span {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Contenido principal ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 24px;
+    }
+
+    /* ── Checkmark animado ── */
+    .check-circle {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(22,163,74,0.35);
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    /* ── Títulos ── */
+    .title-block { text-align: center; max-width: 480px; }
+    .title-block h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #14532d;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .title-block p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* ── Card resumen de compra ── */
+    .order-card {
+      background: #fff;
+      border: 1px solid #d1fae5;
+      border-radius: 20px;
+      padding: 28px 24px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .order-card .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 14px;
+    }
+    .order-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      gap: 12px;
+    }
+    .order-row:last-child { border-bottom: none; }
+    .order-row .item-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+    .order-row .item-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    .order-row .item-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #16a34a;
+      white-space: nowrap;
+    }
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 2px solid #dcfce7;
+    }
+    .order-total .total-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .order-total .total-value {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #16a34a;
+    }
+
+    /* ── Pasos siguientes ── */
+    .steps-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 28px 24px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .steps-card .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 18px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+    }
+    .step + .step { border-top: 1px solid #f8fafc; }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: #0f3460;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+    .step-text span {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* ── Botón WA ── */
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+      width: 100%;
+      max-width: 460px;
+      justify-content: center;
+    }
+    .btn-wa:active {
+      transform: scale(0.97);
+      box-shadow: 0 3px 12px rgba(37,211,102,0.3);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <i class="fas fa-heartbeat"></i>
+    <span>Recursos Médicos</span>
+  </div>
+
+  <main>
+
+    <div class="check-circle">
+      <i class="fas fa-check"></i>
+    </div>
+
+    <div class="title-block">
+      <h1>¡Compra confirmada!</h1>
+      <p>Gracias por adquirir la Guía. En breve recibirás tu descarga por WhatsApp.</p>
+    </div>
+
+    <!-- Resumen de orden -->
+    <div class="order-card">
+      <div class="label">Resumen de tu compra</div>
+      <div class="order-row">
+        <div>
+          <div class="item-name">Guía Completa de Interpretación<br>de Exámenes de Laboratorio</div>
+          <div class="item-sub">Formato PDF digital · Acceso inmediato</div>
+        </div>
+        <div class="item-price">S/ 10.00</div>
+      </div>
+      <div class="order-total">
+        <span class="total-label">Total pagado</span>
+        <span class="total-value">S/ 10.00</span>
+      </div>
+    </div>
+
+    <!-- Pasos siguientes -->
+    <div class="steps-card">
+      <div class="label">¿Qué sigue?</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Revisa tu WhatsApp</strong>
+          <span>Te enviaremos el enlace de descarga de la guía en los próximos minutos.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Descarga tu PDF</strong>
+          <span>Guarda la guía en tu celular o computadora para consultarla cuando la necesites.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>¿Alguna duda?</strong>
+          <span>Escríbenos directamente por WhatsApp y te ayudamos.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.me/51975909094?text=Hola%2C%20acabo%20de%20confirmar%20mi%20compra%20de%20la%20Gu%C3%ADa.%20%C2%BFCu%C3%A1ndo%20recibo%20mi%20descarga%3F"
+       target="_blank" rel="noopener" class="btn-wa">
+      <i class="fab fa-whatsapp" style="font-size:1.3rem"></i>
+      Escribir por WhatsApp
+    </a>
+
+  </main>
+
+  <footer>
+    © 2026 Recursos Médicos · Todos los derechos reservados
+  </footer>
+
+  <!-- Purchase event — se dispara con los datos del cliente (fbp + fbc para atribución) -->
+  <script>
+    (function () {
+      function getCookie(name) {
+        var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return m ? decodeURIComponent(m[1]) : '';
+      }
+
+      var eventId = 'purchase_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+
+      // 1. Pixel browser — lleva fbp + fbc del cliente → atribución a campaña
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          value:            10.00,
+          currency:         'PEN',
+          content_name:     'Guía Interpretación Exámenes de Laboratorio',
+          content_category: 'Ebook',
+          num_items:        1,
+        }, { eventID: eventId });
+      }
+
+      // 2. CAPI serverless — duplica el evento server-side con mismo eventID
+      fetch('/api/track', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'Purchase',
+          event_id:   eventId,
+          fbp:        getCookie('_fbp'),
+          fbc:        getCookie('_fbc'),
+          user_agent: navigator.userAgent,
+          page_url:   location.href,
+        }),
+      }).catch(function () {});
+    })();
+  </script>
+
+</body>
+</html>
