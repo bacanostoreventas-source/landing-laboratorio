@@ -7,6 +7,20 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>Guía de Interpretación de Exámenes de Laboratorio | Para Estudiantes y Profesionales de Salud</title>
   <meta name="description" content="La guía definitiva para interpretar exámenes de laboratorio. Diseñada para estudiantes y profesionales de salud. +50 parámetros clínicos con valores de referencia y correlaciones. Solo S/ 10.00." />
+  <!-- Meta Pixel Base Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '960233036561751');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=960233036561751&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Base Code -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -1845,6 +1859,64 @@
         track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
       });
     })();
+  </script>
+
+  <!-- META PIXEL — EVENTOS + CONVERSIONS API (deduplicación) -->
+  <script>
+    // Lee cookie por nombre
+    function _getCookie(name) {
+      const m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : '';
+    }
+
+    // Genera event_id único para deduplicar pixel <-> CAPI
+    function _genEventId() {
+      return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+    }
+
+    // Envía evento al serverless /api/track (Conversions API)
+    function _sendCapi(eventName, eventId) {
+      fetch('/api/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: eventName,
+          event_id:   eventId,
+          fbp:        _getCookie('_fbp'),
+          fbc:        _getCookie('_fbc'),
+          user_agent: navigator.userAgent,
+          page_url:   location.href,
+        }),
+      }).catch(function() {}); // silencioso si falla
+    }
+
+    // ViewContent — cuando el usuario ve la página del producto
+    window.addEventListener('load', function() {
+      var eid = _genEventId();
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', {
+          content_name:     'Guía Interpretación Exámenes de Laboratorio',
+          content_category: 'Ebook',
+          currency:         'PEN',
+          value:            10.00,
+        }, { eventID: eid });
+      }
+      _sendCapi('ViewContent', eid);
+    });
+
+    // Lead — cuando el usuario hace clic en cualquier botón de WhatsApp
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.btn-wa')) {
+        var eid = _genEventId();
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            currency: 'PEN',
+            value:    10.00,
+          }, { eventID: eid });
+        }
+        _sendCapi('Lead', eid);
+      }
+    });
   </script>
 
 </body>
