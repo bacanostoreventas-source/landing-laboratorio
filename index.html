@@ -162,27 +162,54 @@
     header {
       position: sticky; top: 0; z-index: 100;
       background: var(--blue-dark);
-      padding: 14px 0;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      padding: 10px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
     }
     header .inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      justify-content: center;
+      position: relative;
     }
     .brand {
-      display: flex; align-items: center; gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
+      color: var(--white);
     }
-    .brand-logo {
-      height: 42px;
-      width: auto;
-      border-radius: 8px;
-      display: block;
+    .brand-icon {
+      font-size: 1.75rem;
+      color: var(--teal);
+      line-height: 1;
     }
-    header .btn-wa { padding: 10px 22px; font-size: 0.9rem; box-shadow: none; }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-top {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .brand-bottom {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    /* Botón WA anclado a la derecha */
+    header .btn-wa {
+      position: absolute;
+      right: 0;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      box-shadow: none;
+    }
+    header .btn-wa:hover { transform: translateY(-1px); }
 
     /* ===== HERO ===== */
     .hero {
@@ -1020,6 +1047,8 @@
 
       /* Header */
       header .btn-wa { display: none; }
+      .brand-bottom { font-size: 1rem; }
+      .brand-icon { font-size: 1.5rem; }
 
       /* Hero — todo en una columna */
       .hero { padding: 48px 0 56px; }
@@ -1032,10 +1061,14 @@
       .book-mockup        { display: none; }
       .book-mockup-mobile {
         display: block;
-        width: 92%;
-        max-width: 480px;
-        margin: 20px auto 24px;
+        width: 90%;
+        max-width: 460px;
+        margin: 16px auto 20px;
         filter: drop-shadow(0 16px 32px rgba(0,0,0,0.3));
+        /* forzar centrado explícito */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .hero-badge   { justify-content: center; }
       .hero h1      { font-size: clamp(1.75rem, 7vw, 2.6rem); }
@@ -1068,7 +1101,7 @@
 
       /* Hero */
       .hero { padding: 36px 0 48px; }
-      .book-mockup-mobile { width: 88%; }
+      .book-mockup-mobile { width: 86%; left: 50%; transform: translateX(-50%); }
       .hero h1 { font-size: 1.75rem; letter-spacing: -0.01em; }
       .price-current { font-size: 2.6rem; }
       .hero-trust { flex-direction: column; align-items: center; gap: 10px; }
@@ -1129,7 +1162,11 @@
   <header>
     <div class="container inner">
       <a href="#" class="brand">
-        <img src="img/logo.png" alt="Recursos Médicos" class="brand-logo" />
+        <i class="fas fa-heartbeat brand-icon"></i>
+        <span class="brand-text">
+          <span class="brand-top">Recursos</span>
+          <span class="brand-bottom">Médicos</span>
+        </span>
       </a>
       <a href="https://wa.me/51975909094?text=Hola%2C%20quiero%20adquirir%20la%20Gu%C3%ADa%20de%20Interpretaci%C3%B3n%20de%20Ex%C3%A1menes%20de%20Laboratorio.%20%C2%BFC%C3%B3mo%20la%20obtengo%3F" target="_blank" rel="noopener" class="btn-wa">
         <i class="fab fa-whatsapp"></i> Obtener la guía — S/ 10
