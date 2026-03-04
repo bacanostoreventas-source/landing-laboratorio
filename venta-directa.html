@@ -370,7 +370,14 @@
       font-weight: 700;
       color: #1e293b;
       line-height: 1.35;
+      margin-bottom: 5px;
+    }
+    .bono-utility {
+      font-size: 0.78rem;
+      color: #64748b;
+      line-height: 1.45;
       margin-bottom: 6px;
+      font-style: italic;
     }
     .bono-price-row {
       display: flex;
@@ -617,6 +624,35 @@
     }
     .trust-item i { color: var(--teal); }
 
+    /* ── OBJECIONES ── */
+    .obj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .obj-item {
+      padding: 22px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .obj-item-last { border-bottom: none; }
+    .obj-q {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f3460;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .obj-q i { color: var(--teal); font-size: 1rem; }
+    .obj-a {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
     /* ── FOMO BAR FIJA ── */
     .fomo-bar {
       position: fixed;
@@ -766,6 +802,10 @@
       <h2 class="section-title">Todo lo que recibes en un solo PDF</h2>
       <div class="divider"></div>
 
+      <p style="text-align:center; font-size:0.97rem; color:#475569; line-height:1.75; max-width:540px; margin:0 auto 28px; font-style:italic;">
+        Estos son los exámenes que más te van a preguntar en prácticas, guardia e internado — y los que más se olvidan cuando más se necesitan.
+      </p>
+
       <div class="contents-grid">
         <div class="content-item"><i class="fas fa-check-circle"></i> Hemograma completo e índices eritrocitarios</div>
         <div class="content-item"><i class="fas fa-check-circle"></i> Glucosa, insulina y perfil diabetológico</div>
@@ -791,7 +831,7 @@
       <div style="text-align:center; margin-bottom:8px">
         <span class="tag tag-teal"><i class="fas fa-eye"></i> Vista previa</span>
       </div>
-      <h2 class="section-title">Mira lo que hay dentro</h2>
+      <h2 class="section-title">Así se ve cuando tienes la respuesta en 10 segundos</h2>
       <p class="section-sub">Diseño claro y directo — consulta cualquier examen en segundos</p>
 
       <div class="preview-scroll">
@@ -824,6 +864,7 @@
           <div class="bono-info">
             <div class="bono-label">Bono 1</div>
             <div class="bono-name">50 Esquemas Médicos</div>
+            <div class="bono-utility">Para repasar anatomía y fisiología antes del OSCE sin abrir el libro.</div>
             <div class="bono-price-row">
               <span class="bono-price">S/ 15.00</span>
               <span class="bono-free">¡Gratis!</span>
@@ -838,6 +879,7 @@
           <div class="bono-info">
             <div class="bono-label">Bono 2</div>
             <div class="bono-name">Administración de Medicamentos</div>
+            <div class="bono-utility">Lo que más te preguntan en prácticas de enfermería y clínica.</div>
             <div class="bono-price-row">
               <span class="bono-price">S/ 15.00</span>
               <span class="bono-free">¡Gratis!</span>
@@ -852,6 +894,7 @@
           <div class="bono-info">
             <div class="bono-label">Bono 3</div>
             <div class="bono-name">Electro en Esquemas — ECG</div>
+            <div class="bono-utility">Interpreta un EKG básico antes de tu primera guardia nocturna.</div>
             <div class="bono-price-row">
               <span class="bono-price">S/ 15.00</span>
               <span class="bono-free">¡Gratis!</span>
@@ -866,6 +909,7 @@
           <div class="bono-info">
             <div class="bono-label">Bono 4</div>
             <div class="bono-name">Colección Completa de Libros de Medicina</div>
+            <div class="bono-utility">Harrison, Robbins, Murray — en tu celular, sin pagar por cada uno.</div>
             <div class="bono-price-row">
               <span class="bono-price">S/ 29.00</span>
               <span class="bono-free">¡Gratis!</span>
@@ -884,6 +928,10 @@
       </div>
       <h2 class="section-title">Todo esto por solo S/ 10</h2>
       <div class="divider"></div>
+
+      <p style="text-align:center; font-size:1rem; color:#475569; line-height:1.75; max-width:560px; margin:0 auto 32px; font-style:italic;">
+        Hay recursos que pagas y nunca usas. Este lo vas a abrir la próxima vez que estés frente a un resultado que no recuerdas. Y la siguiente. Y en cada guardia después de esa.
+      </p>
 
       <div class="offer-wrap">
         <ul class="offer-includes">
@@ -917,7 +965,7 @@
           <div class="yape-amount">S/ 10.00 exactos</div>
           <div class="yape-steps">
             <div class="yape-step"><div class="step-num">1</div><span>Escanea el QR o paga al número <strong style="color:#fff">989 650 197</strong></span></div>
-            <div class="yape-step"><div class="step-num">2</div><span>Envíanos el comprobante por WhatsApp — recibes todo en menos de 5 min</span></div>
+            <div class="yape-step"><div class="step-num">2</div><span>Envía tu captura al WhatsApp <strong style="color:#fff">975 909 094</strong> — en menos de 5 minutos recibes el PDF y los 4 bonos directo en tu chat.</span></div>
           </div>
         </div>
 
@@ -933,6 +981,43 @@
           <div class="trust-item"><i class="fas fa-bolt"></i> Entrega inmediata</div>
           <div class="trust-item"><i class="fas fa-wifi-slash"></i> Funciona sin internet</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ OBJECIONES ══ -->
+  <section class="section section-card">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:8px">
+        <span class="tag tag-teal"><i class="fas fa-question-circle"></i> Preguntas frecuentes</span>
+      </div>
+      <h2 class="section-title">Lo que te estarás preguntando</h2>
+      <div class="divider"></div>
+
+      <div class="obj-list">
+
+        <div class="obj-item">
+          <div class="obj-q"><i class="fas fa-shield-alt"></i> ¿Es confiable?</div>
+          <div class="obj-a">
+            Más de 200 estudiantes y profesionales de salud ya lo compraron. Estas son algunas de sus compras confirmadas:
+            <div class="proof-scroll" style="margin-top:12px; margin-bottom:0">
+              <div class="proof-thumb"><img src="img/compra-1.jpg" alt="Compra" loading="lazy" /></div>
+              <div class="proof-thumb"><img src="img/compra-2.jpg" alt="Compra" loading="lazy" /></div>
+              <div class="proof-thumb"><img src="img/compra-3.jpg" alt="Compra" loading="lazy" /></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="obj-item">
+          <div class="obj-q"><i class="fas fa-undo"></i> ¿Y si no me sirve?</div>
+          <div class="obj-a">Si en 24 horas sientes que no era lo que esperabas, te devolvemos el dinero. Sin preguntas.</div>
+        </div>
+
+        <div class="obj-item obj-item-last">
+          <div class="obj-q"><i class="fas fa-file-pdf"></i> ¿Solo es un PDF?</div>
+          <div class="obj-a">Sí. Y por eso funciona: no necesitas app, cuenta ni internet. Lo abres y está. En cualquier celular, en cualquier guardia.</div>
+        </div>
+
       </div>
     </div>
   </section>
