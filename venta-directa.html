@@ -223,14 +223,18 @@
       text-align: left;
     }
     .hero-support strong { color: #fff; font-style: normal; font-weight: 700; }
+    .book-img-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
     .book-img {
       width: min(520px, 98vw);
+      height: auto;
       display: block;
-      margin: 0 auto 10px;
       filter: drop-shadow(0 20px 40px rgba(14,165,233,0.3)) drop-shadow(0 6px 20px rgba(0,0,0,0.5));
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
     }
     .hero-cta {
       display: inline-flex;
@@ -791,7 +795,7 @@
       </div>
       <div class="viewers-badge">
         <span class="dot"></span>
-        <span id="viewers">11</span> personas viendo esto ahora
+        <span id="viewers">11</span> personas viendo esto ahora<span id="viewer-city"></span>
       </div>
 
       <!-- H1 -->
@@ -805,7 +809,9 @@
       </h2>
 
       <!-- Imagen -->
-      <img src="img/portada.png" alt="Guía de Exámenes de Laboratorio" class="book-img" />
+      <div class="book-img-wrap">
+        <img src="img/portada.png" alt="Guía de Exámenes de Laboratorio" class="book-img" />
+      </div>
 
       <!-- Párrafo de apoyo -->
       <p class="hero-support">
@@ -1134,6 +1140,19 @@
       localStorage.removeItem('vd2_expiry');
       location.reload();
     });
+
+    // ── GEOLOCALIZACIÓN POR IP ──
+    (function () {
+      fetch('https://ipapi.co/json/')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var city = data.city || '';
+          if (city) {
+            document.getElementById('viewer-city').textContent = ' en ' + city;
+          }
+        })
+        .catch(function () {}); // fallo silencioso
+    })();
 
     // ── VIEWERS FOMO ──
     function rnd(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
