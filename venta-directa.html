@@ -523,16 +523,14 @@
       justify-content: center;
     }
     .slider-btn:hover { background: rgba(255,255,255,0.25); }
-    @media (min-width: 600px) {
-      .slider-btn { display: flex; }
-      .slider-dots { display: none; }
-    }
+    @media (min-width: 600px) { .slider-btn { display: flex; } }
     .slider-dots {
-      display: flex;
+      display: none;
       justify-content: center;
       gap: 6px;
       margin-top: 6px;
     }
+    @media (max-width: 599px) { .slider-dots { display: flex; } }
     .slider-dots .dot {
       width: 7px; height: 7px;
       border-radius: 50%;
