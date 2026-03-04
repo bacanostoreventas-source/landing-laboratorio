@@ -500,10 +500,50 @@
       margin-bottom: 32px;
       padding: 4px 2px 8px;
     }
-    @media (min-width: 600px) {
-      .proof-scroll { justify-content: center; overflow-x: visible; }
-    }
     .proof-scroll::-webkit-scrollbar { display: none; }
+    /* ── SLIDER CONTROLS ── */
+    .slider-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .slider-btn {
+      display: none;
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-items: center;
+      justify-content: center;
+    }
+    .slider-btn:hover { background: rgba(255,255,255,0.25); }
+    @media (min-width: 600px) {
+      .slider-btn { display: flex; }
+      .slider-dots { display: none; }
+    }
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .slider-dots .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .slider-dots .dot.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
     .proof-thumb {
       flex: 0 0 min(160px, 42vw);
       scroll-snap-align: start;
@@ -513,6 +553,18 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
     .proof-thumb img { width: 100%; display: block; }
+    @media (min-width: 600px) {
+      .proof-scroll {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-y: visible;
+      }
+      .proof-thumb { flex: 0 0 140px; }
+    }
 
     /* ── PAYMENT ── */
     .yape-card {
@@ -1011,13 +1063,25 @@
         <div class="proof-label">
           <span class="dot-live"></span> Compras confirmadas hoy
         </div>
-        <div class="proof-scroll">
-          <div class="proof-thumb"><img src="img/compra-1.jpg" alt="Compra" loading="lazy" /></div>
-          <div class="proof-thumb"><img src="img/compra-2.jpg" alt="Compra" loading="lazy" /></div>
-          <div class="proof-thumb"><img src="img/compra-3.jpg" alt="Compra" loading="lazy" /></div>
-          <div class="proof-thumb"><img src="img/compra-4.jpg" alt="Compra con Plin" loading="lazy" /></div>
-          <div class="proof-thumb"><img src="img/compra-5.jpg" alt="Compra con Yape" loading="lazy" /></div>
-          <div class="proof-thumb"><img src="img/compra-6.jpg" alt="Compra con Yape" loading="lazy" /></div>
+        <div class="slider-wrapper">
+          <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+          <div class="proof-scroll" id="proofScroll1">
+            <div class="proof-thumb"><img src="img/compra-1.jpg" alt="Compra" loading="lazy" /></div>
+            <div class="proof-thumb"><img src="img/compra-2.jpg" alt="Compra" loading="lazy" /></div>
+            <div class="proof-thumb"><img src="img/compra-3.jpg" alt="Compra" loading="lazy" /></div>
+            <div class="proof-thumb"><img src="img/compra-4.jpg" alt="Compra con Plin" loading="lazy" /></div>
+            <div class="proof-thumb"><img src="img/compra-5.jpg" alt="Compra con Yape" loading="lazy" /></div>
+            <div class="proof-thumb"><img src="img/compra-6.jpg" alt="Compra con Yape" loading="lazy" /></div>
+          </div>
+          <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+        </div>
+        <div class="slider-dots" id="proofDots1">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
 
         <!-- Yape -->
@@ -1063,13 +1127,25 @@
           <div class="obj-q"><i class="fas fa-shield-alt"></i> ¿Es confiable?</div>
           <div class="obj-a">
             Más de 200 estudiantes y profesionales de salud ya lo compraron. Estas son algunas de sus compras confirmadas:
-            <div class="proof-scroll" style="margin-top:12px; margin-bottom:0">
-              <div class="proof-thumb"><img src="img/compra-1.jpg" alt="Compra" loading="lazy" /></div>
-              <div class="proof-thumb"><img src="img/compra-2.jpg" alt="Compra" loading="lazy" /></div>
-              <div class="proof-thumb"><img src="img/compra-3.jpg" alt="Compra" loading="lazy" /></div>
-              <div class="proof-thumb"><img src="img/compra-4.jpg" alt="Compra con Plin" loading="lazy" /></div>
-              <div class="proof-thumb"><img src="img/compra-5.jpg" alt="Compra con Yape" loading="lazy" /></div>
-              <div class="proof-thumb"><img src="img/compra-6.jpg" alt="Compra con Yape" loading="lazy" /></div>
+            <div class="slider-wrapper" style="margin-top:12px;">
+              <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+              <div class="proof-scroll" id="proofScroll2" style="margin-bottom:0">
+                <div class="proof-thumb"><img src="img/compra-1.jpg" alt="Compra" loading="lazy" /></div>
+                <div class="proof-thumb"><img src="img/compra-2.jpg" alt="Compra" loading="lazy" /></div>
+                <div class="proof-thumb"><img src="img/compra-3.jpg" alt="Compra" loading="lazy" /></div>
+                <div class="proof-thumb"><img src="img/compra-4.jpg" alt="Compra con Plin" loading="lazy" /></div>
+                <div class="proof-thumb"><img src="img/compra-5.jpg" alt="Compra con Yape" loading="lazy" /></div>
+                <div class="proof-thumb"><img src="img/compra-6.jpg" alt="Compra con Yape" loading="lazy" /></div>
+              </div>
+              <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+            </div>
+            <div class="slider-dots" id="proofDots2">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
             </div>
           </div>
         </div>
@@ -1237,6 +1313,48 @@
         _sendCapi('Lead', eid);
       }
     });
+  </script>
+
+  <script>
+    // Slider de comprobantes de pago
+    (function () {
+      function initSlider(scrollId, dotsId) {
+        var scroll = document.getElementById(scrollId);
+        var dotsEl = document.getElementById(dotsId);
+        if (!scroll || !dotsEl) return;
+        var dots = dotsEl.querySelectorAll('.dot');
+        var prev = scroll.parentElement.querySelector('.slider-prev');
+        var next = scroll.parentElement.querySelector('.slider-next');
+        var current = 0;
+
+        function itemWidth() {
+          var el = scroll.firstElementChild;
+          if (!el) return 140;
+          var gap = parseFloat(getComputedStyle(scroll).gap) || 12;
+          return el.offsetWidth + gap;
+        }
+
+        function goTo(i) {
+          current = Math.max(0, Math.min(i, dots.length - 1));
+          scroll.scrollTo({ left: current * itemWidth(), behavior: 'smooth' });
+          dots.forEach(function (d, idx) { d.classList.toggle('active', idx === current); });
+        }
+
+        scroll.addEventListener('scroll', function () {
+          var w = itemWidth();
+          if (!w) return;
+          current = Math.round(scroll.scrollLeft / w);
+          dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+        });
+
+        dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+        if (prev) prev.addEventListener('click', function () { goTo(current - 1); });
+        if (next) next.addEventListener('click', function () { goTo(current + 1); });
+      }
+
+      initSlider('proofScroll1', 'proofDots1');
+      initSlider('proofScroll2', 'proofDots2');
+    })();
   </script>
 
 </body>
