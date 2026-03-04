@@ -544,13 +544,14 @@
     }
     .proof-thumb {
       flex: 0 0 min(160px, 42vw);
+      height: 230px;
       scroll-snap-align: start;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,0.3);
       border: 1px solid rgba(255,255,255,0.1);
     }
-    .proof-thumb img { width: 100%; display: block; }
+    .proof-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     @media (min-width: 600px) {
       .proof-scroll {
         justify-content: flex-start;
