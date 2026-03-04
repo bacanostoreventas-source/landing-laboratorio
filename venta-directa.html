@@ -624,6 +624,31 @@
     }
     .trust-item i { color: var(--teal); }
 
+    /* ── TESTIMONIOS ── */
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .testimonio-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s;
+    }
+    .testimonio-card:active { transform: scale(0.98); }
+    .testimonio-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    @media (max-width: 420px) {
+      .testimonios-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ── OBJECIONES ── */
     .obj-list {
       display: flex;
@@ -915,6 +940,32 @@
               <span class="bono-free">¡Gratis!</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIOS ══ -->
+  <section class="section section-card">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:8px">
+        <span class="tag tag-teal"><i class="fab fa-facebook"></i> Lo que dicen en Facebook</span>
+      </div>
+      <h2 class="section-title">Estudiantes que ya lo tienen</h2>
+      <p class="section-sub">Comentarios reales de personas que compraron la guía</p>
+
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <img src="img/testimonios/testimonio1.png" alt="Testimonio" loading="lazy" />
+        </div>
+        <div class="testimonio-card">
+          <img src="img/testimonios/testimonio2.png" alt="Testimonio" loading="lazy" />
+        </div>
+        <div class="testimonio-card">
+          <img src="img/testimonios/testimonio3.png" alt="Testimonio" loading="lazy" />
+        </div>
+        <div class="testimonio-card">
+          <img src="img/testimonios/testimonio4.png" alt="Testimonio" loading="lazy" />
         </div>
       </div>
     </div>
