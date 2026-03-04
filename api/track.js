@@ -22,9 +22,9 @@ export default async function handler(req, res) {
   const clientIp = (req.headers['x-forwarded-for'] || '')
     .split(',')[0].trim() || req.socket?.remoteAddress || '';
 
-  // custom_data solo para eventos de conversión con valor económico
-  const isPurchase = event_name === 'Purchase';
-  const customData = isPurchase ? {
+  // custom_data para todos los eventos con valor económico
+  const EVENTS_WITH_VALUE = ['Purchase', 'InitiateCheckout', 'ViewContent', 'Lead'];
+  const customData = EVENTS_WITH_VALUE.includes(event_name) ? {
     currency:         'PEN',
     value:            10.00,
     content_name:     'Guía Interpretación Exámenes de Laboratorio',

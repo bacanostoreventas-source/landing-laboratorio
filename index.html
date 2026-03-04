@@ -2135,9 +2135,27 @@
       _sendCapi('ViewContent', eid);
     });
 
-    // Lead — cuando el usuario hace clic en cualquier botón de WhatsApp
+    // InitiateCheckout — clic en cualquier CTA que lleva al bloque de pago (#pago)
     document.addEventListener('click', function(e) {
-      if (e.target.closest('.btn-wa')) {
+      var el = e.target.closest('[href="#pago"]');
+      if (el) {
+        var eid = _genEventId();
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', {
+            currency:         'PEN',
+            value:            10.00,
+            content_name:     'Guía Interpretación Exámenes de Laboratorio',
+            content_category: 'Ebook',
+            num_items:        1,
+          }, { eventID: eid });
+        }
+        _sendCapi('InitiateCheckout', eid);
+      }
+    });
+
+    // Lead — clic en botones de WhatsApp (contacto / comprobante / duda)
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.btn-wa-big') || e.target.closest('.wa-float') || e.target.closest('.link-duda')) {
         var eid = _genEventId();
         if (typeof fbq === 'function') {
           fbq('track', 'Lead', {

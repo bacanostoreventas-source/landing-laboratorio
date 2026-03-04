@@ -1163,6 +1163,74 @@
         loop();
       }, rnd(28000, 48000));
     })();
+
+    // ── META PIXEL — EVENTOS + CONVERSIONS API ──
+    function _getCookie(name) {
+      var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : '';
+    }
+    function _genEventId() {
+      return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+    }
+    function _sendCapi(eventName, eventId) {
+      fetch('/api/track', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: eventName,
+          event_id:   eventId,
+          fbp:        _getCookie('_fbp'),
+          fbc:        _getCookie('_fbc'),
+          user_agent: navigator.userAgent,
+          page_url:   location.href,
+        }),
+      }).catch(function () {});
+    }
+
+    // ViewContent — al cargar la página
+    window.addEventListener('load', function () {
+      var eid = _genEventId();
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', {
+          content_name:     'Guía Interpretación Exámenes de Laboratorio',
+          content_category: 'Ebook',
+          currency:         'PEN',
+          value:            10.00,
+        }, { eventID: eid });
+      }
+      _sendCapi('ViewContent', eid);
+    });
+
+    // InitiateCheckout — clic en cualquier CTA que lleva a #pago
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[href="#pago"]')) {
+        var eid = _genEventId();
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', {
+            currency:         'PEN',
+            value:            10.00,
+            content_name:     'Guía Interpretación Exámenes de Laboratorio',
+            content_category: 'Ebook',
+            num_items:        1,
+          }, { eventID: eid });
+        }
+        _sendCapi('InitiateCheckout', eid);
+      }
+    });
+
+    // Lead — clic en botones de WhatsApp (comprobante / duda)
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.btn-wa-big') || e.target.closest('.link-duda')) {
+        var eid = _genEventId();
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            currency: 'PEN',
+            value:    10.00,
+          }, { eventID: eid });
+        }
+        _sendCapi('Lead', eid);
+      }
+    });
   </script>
 
 </body>
