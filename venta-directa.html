@@ -196,17 +196,30 @@
       margin-right: auto;
     }
     .hero h1 em { font-style: normal; color: var(--teal); }
-    .hero h1 .hl-yellow { color: var(--yellow); }
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.55);
+    .hero h2 {
+      font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.45;
       margin-bottom: 16px;
-      max-width: 480px;
+      max-width: 560px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.65;
     }
-    .hero-sub strong { color: rgba(255,255,255,0.9); }
+    .hero-support {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      font-style: italic;
+      border-left: 3px solid rgba(14,165,233,0.5);
+      padding-left: 16px;
+      text-align: left;
+    }
+    .hero-support strong { color: rgba(255,255,255,0.85); font-style: normal; }
     .book-img {
       width: min(480px, 92vw);
       display: block;
@@ -705,31 +718,38 @@
   <section class="hero">
     <div class="container">
 
+      <!-- Etiqueta + FOMO -->
       <div class="audience-badge">
-        <i class="fas fa-user-md"></i> Para estudiantes y profesionales de la salud
+        <i class="fas fa-user-md"></i> Para estudiantes y profesionales de la salud en Perú
       </div>
-
       <div class="viewers-badge">
         <span class="dot"></span>
         <span id="viewers">11</span> personas viendo esto ahora
       </div>
 
+      <!-- H1 -->
       <h1>
-        Nunca más llegues a guardia<br>
-        sin entender los resultados<br>
-        de <em>laboratorio.</em>
+        +50 parámetros clínicos con valores de referencia, interpretación y correlaciones — en un <em>PDF que consultas en 10 segundos</em> desde tu celular.
       </h1>
 
-      <p class="hero-sub">
-        La guía con <strong>+50 parámetros clínicos</strong>, valores de referencia y correlaciones que todo estudiante y profesional de salud necesita en su celular.
-      </p>
+      <!-- H2 -->
+      <h2>
+        La guía que +200 estudiantes ya tienen en su celular para no quedarse en blanco en guardia.
+      </h2>
 
+      <!-- Imagen -->
       <img src="img/portada.png" alt="Guía de Exámenes de Laboratorio" class="book-img" />
 
+      <!-- Párrafo de apoyo -->
+      <p class="hero-support">
+        Buscaste en Harrison. Abriste Google. Preguntaste al compañero. Y el tiempo seguía corriendo. <strong>Esta guía existe para ese momento exacto:</strong> cuando el médico espera una respuesta y tú necesitas el dato ahora. Sin internet. Sin páginas de más. Sin letra pequeña.
+      </p>
+
+      <!-- CTA -->
       <a href="#pago" class="hero-cta">
-        <i class="fas fa-arrow-down"></i> Quiero mi guía — S/ 10.00
+        Quiero mi guía — S/ 10.00 &nbsp;→
       </a>
-      <p class="hero-price-note">Pago único · Acceso inmediato · Sin suscripciones</p>
+      <p class="hero-price-note">Pago único · Lo recibes en WhatsApp en menos de 5 minutos · Funciona sin internet</p>
 
     </div>
   </section>
